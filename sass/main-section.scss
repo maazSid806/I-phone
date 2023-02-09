@@ -1,0 +1,112 @@
+.main-section {
+    .phone {
+        position: relative;
+        z-index: 1;
+        aspect-ratio: 37/76;
+        height: $heights;
+        background-color: black;
+        border-radius: 2.66em;
+        box-shadow: 0 0 6px rgba(524, 523, 223, 3.916);
+        opacity: 0;
+        transform: scale3d(1.1, 1.1, 1);
+        animation: appear 1s $ease-out forwards;
+        -webkit-backface-visibility: hidden;
+        // :before {
+        //     content: "";
+        //     position: absolute;
+        //     top: $border-radius;
+        //     right: calc($border-width * -1);
+        //     bottom:calc( $border-radius);
+        //     left: calc($border-width) * -1;
+        //     border: 0.5em solid $c-h, 20%, 30%;
+        //     border-left-width: 0;
+        //     border-right-width: 0;
+
+        // }
+        .buttons {
+            position: absolute;
+            inset: calc(0.1em * -1);
+            pointer-events: none;
+
+            .right {
+                top: calc($border-radius) * 3;
+                position: absolute;
+                width: $button-width;
+                left: 100%;
+                .button {
+                    height: 3.5em;
+                    background-color: rgb(129, 126, 126);
+                    border-radius: 20px;
+                    box-shadow: 0 0 2px rgba(524, 523, 223, 3.916);
+                }
+            }
+            .left {
+                gap: 1.3em;
+                position: absolute;
+                right: 100%;
+                display: flex;
+                flex-direction: column;
+                top: calc(2.664em) * 2;
+                .button {
+                    background-color: rgb(129, 126, 126);
+                    height: 3.5em;
+                    border: $border-radius;
+                    box-shadow: 0 0 2px rgba(524, 523, 223, 3.916);
+                }
+                .button-silent {
+                    height: 1.5em;
+                    background-color: rgb(129, 126, 126);
+                    border: $border-radius;
+                    box-shadow: 0 0 2px rgba(524, 523, 223, 3.916);
+                }
+            }
+        }
+    }
+
+    .screen-container {
+        position: absolute;
+        inset: 0;
+        border-radius: $border-radius;
+        border: $pad solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: calc($pad * 2);
+               :before{
+            content: "";
+            position: absolute;
+            z-index: 2;
+            background-color: white;
+            width: 36.6%;
+            bottom: calc($pad * 0.075);
+            height: calc($pad * 0.05);
+            border-radius: calc($pad * 0.25);
+
+        }
+
+        .bg {
+            position: absolute;
+            inset: 0;
+            background: black;
+            border-radius: calc($border-radius);
+            overflow: hidden;
+            .bg > * {
+                position: absolute;
+                inset: 0;
+                display: flex;
+                flex-direction: column;
+                opacity: 0;
+                transition: opacity 1s $ease-out 0.5s;
+            }
+            .section {
+                --g-h: $c-h;
+                --g-s: $c-s;
+                position: relative;
+                overflow: hidden;
+                border-radius: calc($border-radius - $pad);
+                border-bottom-left-radius: 20em;
+                border-bottom-right-radius: 20em;
+            }
+        }
+    }
+}

@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap");
+@keyframes appear {
+  to {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+}
+body {
+  background-color: #00000a;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  font-size: var(--size);
+}
+
+.main-section .phone {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 37/76;
+  height: 60vh;
+  background-color: black;
+  border-radius: 2.66em;
+  box-shadow: 0 0 6px rgb(255, 255, 223);
+  opacity: 0;
+  transform: scale3d(1.1, 1.1, 1);
+  animation: appear 1s cubic-bezier(0.15, 0, 0.333, 1) forwards;
+  -webkit-backface-visibility: hidden;
+}
+.main-section .phone .buttons {
+  position: absolute;
+  inset: -0.1em;
+  pointer-events: none;
+}
+.main-section .phone .buttons .right {
+  top: 10.998em;
+  position: absolute;
+  width: 0.333em;
+  left: 100%;
+}
+.main-section .phone .buttons .right .button {
+  height: 3.5em;
+  background-color: rgb(129, 126, 126);
+  border-radius: 20px;
+  box-shadow: 0 0 2px rgb(255, 255, 223);
+}
+.main-section .phone .buttons .left {
+  gap: 1.3em;
+  position: absolute;
+  right: 100%;
+  display: flex;
+  flex-direction: column;
+  top: 5.328em;
+}
+.main-section .phone .buttons .left .button {
+  background-color: rgb(129, 126, 126);
+  height: 3.5em;
+  border: 3.666em;
+  box-shadow: 0 0 2px rgb(255, 255, 223);
+}
+.main-section .phone .buttons .left .button-silent {
+  height: 1.5em;
+  background-color: rgb(129, 126, 126);
+  border: 3.666em;
+  box-shadow: 0 0 2px rgb(255, 255, 223);
+}
+.main-section .screen-container {
+  position: absolute;
+  inset: 0;
+  border-radius: 3.666em;
+  border: 1.25em solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5em;
+}
+.main-section .screen-container .bg {
+  position: absolute;
+  inset: 0;
+  background: black;
+  border-radius: 3.666em;
+  overflow: hidden;
+}
+.main-section .screen-container .bg .bg > * {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.15, 0, 0.333, 1) 0.5s;
+}
+.main-section .screen-container .bg .section {
+  --g-h: $c-h;
+  --g-s: $c-s;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2.416em;
+  border-bottom-left-radius: 20em;
+  border-bottom-right-radius: 20em;
+}
+
+/*# sourceMappingURL=index.css.map */
